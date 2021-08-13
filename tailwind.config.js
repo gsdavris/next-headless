@@ -4,7 +4,7 @@ module.exports = {
 		purgeLayersByDefault: true,
 	},
   purge: [
-    './src/components/**/*.js',
+    './src/components/**/*.{js,jsx}',
     './pages/**/*.js'
   ],
   darkMode: false, // or 'media' or 'class'

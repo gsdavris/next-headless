@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 module.exports = {
 	plugins: {
 		'postcss-import': {},
@@ -14,4 +15,4 @@ module.exports = {
 			}
 		}
 	}
-}
+};
