@@ -1,4 +1,3 @@
-  
-**/node_modules/**
-**/build/**
-**/*.scss
+/node_modules
+/build
+/*.scss

@@ -9,7 +9,7 @@ import { GET_MENUS } from '../src/queries/get-menus';
 import Header from '../src/components/layouts/Header';
 import Footer from '../src/components/layouts/Footer';
 import SearchBox from '../src/components/search/SearchBox';
-import LoadMorePosts from '../src/components/news/load-more-posts';
+import LoadMorePosts from '../src/components/news/Load-more-posts';
 import { GET_SEARCH_RESULTS, GET_SEARCH_RESULTS_WITH_TOTAL_PAGES } from '../src/queries/search/get-search-results';
 import ErrorMessage from '../src/components/error/ErrorMessage';
 import Loading from '../src/components/loading/Loading';
