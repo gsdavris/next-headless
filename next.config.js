@@ -20,26 +20,31 @@ module.exports = {
 	images: {
 		domains: [ allowedImageWordPressDomain, 'via.placeholder.com' ],
 	},
+	eslint: {
+		// Warning: This allows production builds to successfully complete even if
+		// your project has ESLint errors.
+		ignoreDuringBuilds: true,
+	},
 	async headers() {
-	return [
-		{
-		source: '/(.*)',
-		headers: [
+		return [
 			{
-			key: 'X-Content-Type-Options',
-			value: 'nosniff',
+				source: '/(.*)',
+				headers: [
+					{
+					key: 'X-Content-Type-Options',
+					value: 'nosniff',
+					},
+					{
+					key: 'X-Frame-Options',
+					value: 'DENY',
+					},
+					{
+					key: 'X-XSS-Protection',
+					value: '1; mode=block',
+					},
+				],
 			},
-			{
-			key: 'X-Frame-Options',
-			value: 'DENY',
-			},
-			{
-			key: 'X-XSS-Protection',
-			value: '1; mode=block',
-			},
-		],
-		},
-	];
+		];
 	},
 	target: 'serverless'
 };
