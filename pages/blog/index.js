@@ -2,7 +2,7 @@
 import client from '../../src/apollo/client';
 import Layout from '../../src/components/layouts/Layout';
 import { PER_PAGE_FIRST, totalPagesCount } from '../../src/utils/pagination';
-import Pagination from '../../src/components/blog/Pagination';
+import Pagination from '../../src/components/blog/pagination';
 import Posts from '../../src/components/blog/Posts';
 import {handleRedirectsAndReturnData} from '../../src/utils/slug';
 import {GET_POSTS} from '../../src/queries/posts/get-posts';
