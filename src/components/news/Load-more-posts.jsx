@@ -5,7 +5,7 @@ import { useLazyQuery } from '@apollo/client';
 import PropTypes from 'prop-types';
 import {isEmpty} from 'lodash';
 
-import Posts from '../blog/posts';
+import Posts from '../blog/Posts';
 import { PER_PAGE_FIRST } from '../../utils/pagination';
 import { GET_LOAD_MORE_NEWS } from '../../queries/news/get-load-more-news';
 
