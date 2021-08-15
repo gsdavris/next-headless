@@ -94,7 +94,7 @@ const Slider = () => {
   // absolute positioning on each side of the image.
     <div className="flex justify-center w-screen md:w-7/12 items-center">
       <div className="relative w-full">
-        <div className="carousel rounded">
+        <div className="carousel rounded-lg">
           {sliderControl( true )}
           {images.map( ( img, i ) => (
             <div className="w-full flex-shrink-0" key={img} ref={refs[i]}>

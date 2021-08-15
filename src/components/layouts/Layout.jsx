@@ -38,11 +38,11 @@ const Layout = ( {children, isPost, data} ) => {
 			<Header header={header} menu={headerMenus?.edges}/>
 			<main className="w-full flex-col mx-auto min-h-almost-screen">
 				<div className="relative pt-16 pb-32 flex content-center items-center justify-center min-h-screen-75">
-					<div className="absolute top-0 w-full h-full">
-						<Image { ... isPost ? post?.featuredImage?.node : page?.featuredImage?.node } width="400" height="225" layout="fill" containerClassNames="absolute top-0 w-full h-full bg-center bg-cover" title={seo?.title ?? ''} />
+					<div className="absolute top-0 w-full h-full rounded-lg">
+						<Image { ... isPost ? post?.featuredImage?.node : page?.featuredImage?.node } width="400" height="225" layout="fill" className="rounded-lg" containerClassNames="absolute top-0 w-full h-full bg-center bg-cover rounded-lg" title={seo?.title ?? ''} />
 						<span
 						id="blackOverlay"
-						className="w-full h-full absolute top-0 opacity-50 bg-black"
+						className="w-full h-full absolute top-0 opacity-50 bg-black rounded-lg"
 						></span>
 					</div>
 					<div className="container relative mx-auto">
