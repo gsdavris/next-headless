@@ -28,7 +28,7 @@ const Slider = () => {
     // First let's set the index of the image we want to see next
     setCurrentImage( i );
     // Now, this is where the magic happens. We 'tagged' each one of the images with a ref,
-    // we can then use built-in scrollIntoView API to do eaxactly what it says on the box - scroll it into
+    // we can then use built-in scrollIntoView API to do exactly what it says on the box - scroll it into
     // your current view! To do so we pass an index of the image, which is then use to identify our current
     // image's ref in 'refs' array above.
     refs[i].current.scrollIntoView( {
@@ -64,7 +64,7 @@ const Slider = () => {
 
   // Tailwind styles. Most importantly notice position absolute, this will sit relative to the carousel's outer div.
   const arrowStyle =
-    'absolute text-white z-10 bg-black h-6 w-6 md:h-12 md:w-12 rounded-full opacity-75 flex items-center justify-center focus:outline-none';
+    'absolute text-white z-10 bg-black h-12 w-12 rounded-full opacity-75 flex items-center justify-center focus:outline-none';
 
   // Let's create dynamic buttons. It can be either left or right. Using
   // isLeft boolean we can determine which side we'll be rendering our button
@@ -76,7 +76,7 @@ const Slider = () => {
       className={`${arrowStyle} ${isLeft ? 'left-2' : 'right-2'}`}
       style={{ top: '45%' }}
     >
-      <span role="img" className='inline-block h-6 w-6 md:h-12 md:w-12' aria-label={`Arrow ${isLeft ? 'left' : 'right'}`}>
+      <span role="img" className='inline-block h-12 w-12' aria-label={`Arrow ${isLeft ? 'left' : 'right'}`}>
         {
         isLeft ?
         <ChevronLeftIcon />        :
@@ -92,7 +92,7 @@ const Slider = () => {
   // Finally the image itself will be 100% of a parent div. Outer div is
   // set with position relative, so we can place our cotrol buttons using
   // absolute positioning on each side of the image.
-    <div className="p-12 flex justify-center w-screen md:w-8/12 items-center">
+    <div className="flex justify-center w-screen md:w-7/12 items-center">
       <div className="relative w-full">
         <div className="carousel rounded">
           {sliderControl( true )}
