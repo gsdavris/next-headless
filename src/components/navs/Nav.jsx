@@ -2,6 +2,7 @@
 /* eslint-disable eol-last */
 import { Fragment } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { Popover, Transition } from '@headlessui/react';
 import {
   PhoneIcon,
@@ -26,6 +27,8 @@ function classNames( ...classes ) {
 }
 
 const Nav = ( {menu, slug} ) => {
+  const router = useRouter();
+
   if ( isEmpty( menu ) ) {
     return null;
   }
@@ -38,7 +41,7 @@ const Nav = ( {menu, slug} ) => {
                       0 === i?.node?.childItems?.edges?.length ?
                       (
                         <Link key={i?.node?.id} href={i?.node?.path} >
-                            <a className="text-xl font-light text-gray-500 hover:text-gray-900">
+                            <a className={`text-xl font-${i?.node?.path === router.asPath ? 'base' : 'light'} text-gray-500 hover:text-gray-900`}>
                                 {i?.node?.label}
                             </a>
                         </Link>
@@ -85,7 +88,7 @@ const Nav = ( {menu, slug} ) => {
                                         <a data-cy="nav-item" className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50"
                                         >
                                           <div className="ml-4">
-                                            <p className="text-xl font-light text-gray-900">{item?.node?.label}</p>
+                                            <p className={`text-xl font-${i?.node?.path === router.asPath ? 'base' : 'light'} text-gray-900`}>{item?.node?.label}</p>
                                           </div>
                                         </a>
                                       </Link>
