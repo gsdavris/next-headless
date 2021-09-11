@@ -12,7 +12,7 @@ import { BookOpenIcon, EyeOffIcon, GiftIcon, UserGroupIcon, TrendingUpIcon, Fing
 const HomeSection = () => {
   return (
     <>
-        <section className="pb-20 bg-indigo-100  -mt-24">
+        <section className="pb-20 bg-indigo-100  ">
           <div className="lg:container mx-auto px-4">
             <div className="flex flex-wrap">
               <div className="lg:pt-12 pt-6 w-full md:w-4/12 px-4 text-center">
@@ -24,7 +24,8 @@ const HomeSection = () => {
                   transition: {
                     duration: .15
                   }
-                }} className="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg">
+                }}
+                className="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg  -mt-24">
                   <div className="px-4 py-5 flex-auto">
                     <div className="text-white p-3 text-center inline-flex items-center justify-center w-16 h-16 mb-5 shadow-lg rounded-full bg-red-400">
                         <BookOpenIcon />
@@ -48,7 +49,7 @@ const HomeSection = () => {
                     duration: .15
                   }
                 }}
-                className="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg">
+                className="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg  md:-mt-24">
                   <div className="px-4 py-5 flex-auto">
                     <div className="text-white p-3 text-center inline-flex items-center justify-center w-16 h-16 mb-5 shadow-lg rounded-full bg-indigo-400">
                       <EyeOffIcon />
@@ -72,7 +73,7 @@ const HomeSection = () => {
                     duration: .15
                   }
                 }}
-                className="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg">
+                className="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg  md:-mt-24">
                   <div className="px-4 py-5 flex-auto">
                     <div className="text-white p-3 text-center inline-flex items-center justify-center w-16 h-16 mb-5 shadow-lg rounded-full bg-green-400">
                       <GiftIcon />
