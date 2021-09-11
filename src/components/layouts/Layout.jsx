@@ -50,7 +50,7 @@ const Layout = ( {children, isPost, data} ) => {
 						/>
 						<span
 						id="blackOverlay"
-						className="w-full h-full absolute top-0 opacity-50 bg-black rounded-lg"
+						className="w-full h-full absolute top-0 opacity-30 bg-black rounded-lg"
 						></span>
 					</div>
 					<div className="container relative mx-auto">
