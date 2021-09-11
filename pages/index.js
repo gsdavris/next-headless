@@ -9,9 +9,11 @@ import { handleRedirectsAndReturnData } from '../src/utils/slug';
 export default function Index( {data} ) {
   return (
     <Layout data={data}>
+      <>
         <HomeSection />
          { data?.page?.content ? <div dangerouslySetInnerHTML={{__html: sanitize( data?.page?.content ?? {} )}}/> : null }
         <ContactForm />
+      </>
     </Layout>
   );
 }

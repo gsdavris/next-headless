@@ -14,7 +14,7 @@ Router.events.on( 'routeChangeError', () => NProgress.done() );
 function MyApp( { Component, pageProps, router } ) {
 	return (
 		<ApolloProvider client={client}>
-			<motion.div key={router.route} initial="pageInitial" animate="pageAnimate" variants={{
+			<motion.div key={router.asPath} initial="pageInitial" animate="pageAnimate" variants={{
 			pageInitial: {
 				opacity: 0
 			},
@@ -22,7 +22,7 @@ function MyApp( { Component, pageProps, router } ) {
 				opacity: 1
 			},
 			}}>
-				<Component {...pageProps} />
+				<Component {...pageProps} key={router.asPath} />
 			</motion.div>
 		</ApolloProvider>
 	);
