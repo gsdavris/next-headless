@@ -16,7 +16,6 @@ class MyDocument extends Document {
     return (
       <Html lang={this.props.data?.allSettings?.generalSettingsLanguage}>
         <Head>
-           {/* Global Site Tag (gtag.js) - Google Analytics */}
            <script
             async
             src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
@@ -33,6 +32,7 @@ class MyDocument extends Document {
           `,
             }}
           />
+          <script src={ `https://maps.googleapis.com/maps/api/js?key=${process.env.NEXT_PUBLIC_MAP_API_KEY}` } />
         </Head>
         <body>
           <Main />

@@ -12,7 +12,6 @@ export default function Index( {data} ) {
       <>
         <HomeSection />
          { data?.page?.content ? <div dangerouslySetInnerHTML={{__html: sanitize( data?.page?.content ?? {} )}}/> : null }
-        <ContactForm />
       </>
     </Layout>
   );
