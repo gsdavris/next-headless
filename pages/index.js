@@ -1,7 +1,6 @@
 import client from '../src/apollo/client';
 import Layout from '../src/components/layouts/Layout';
 import HomeSection from '../src/components/layouts/HomeSection';
-import ContactForm from '../src/components/contact/ContactForm';
 import {sanitize} from '../src/utils/miscellaneous';
 import {GET_PAGE} from '../src/queries/pages/get-page';
 import { handleRedirectsAndReturnData } from '../src/utils/slug';

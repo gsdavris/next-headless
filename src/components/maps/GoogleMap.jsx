@@ -8,6 +8,7 @@ const GoogleMap = () => {
     let map = mapRef.current;
     let lat = '40.748817';
     let lng = '-73.985428';
+    const icon = 'https://cocus.gr/wp-content/uploads/2016/02/home_tea_pin-1.png';
     const myLatlng = new google.maps.LatLng( lat, lng );
     const mapOptions = {
       zoom: 12,
@@ -63,13 +64,14 @@ const GoogleMap = () => {
     const marker = new google.maps.Marker( {
       position: myLatlng,
       map: map,
+      // icon: icon,
       animation: google.maps.Animation.DROP,
-      title: 'Notus NextJS!'
+      title: 'Next Headless'
     } );
 
     const contentString =
-      '<div class="info-window-content"><h2>Notus NextJS</h2>' +
-      '<p>A free Admin for Tailwind CSS, React, React Hooks, and NextJS.</p></div>';
+      '<div class="info-window-content"><h2>Next Headless</h2>' +
+      '<p>A simple and powerful framework that produces unmatched results.</p></div>';
 
     const infowindow = new google.maps.InfoWindow( {
       content: contentString
@@ -81,7 +83,7 @@ const GoogleMap = () => {
   } );
   return (
     <>
-      <div className="relative w-full rounded-lg h-700-px">
+      <div className="relative w-full rounded-lg h-600-px">
         <div className="rounded-lg h-full" ref={mapRef} />
       </div>
     </>
