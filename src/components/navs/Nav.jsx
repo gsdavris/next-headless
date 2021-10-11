@@ -26,7 +26,7 @@ function classNames( ...classes ) {
   return classes.filter( Boolean ).join( ' ' );
 }
 
-const Nav = ( {menu, slug} ) => {
+const Nav = ( { menu, slug, color } ) => {
   const router = useRouter();
 
   if ( isEmpty( menu ) ) {
@@ -41,7 +41,7 @@ const Nav = ( {menu, slug} ) => {
                       0 === i?.node?.childItems?.edges?.length ?
                       (
                         <Link key={i?.node?.id} href={i?.node?.path} >
-                            <a className={`text-xl font-${i?.node?.path === router.asPath ? 'base' : 'light'} text-gray-500 hover:text-gray-900`}>
+                            <a className={`text-xl font-${i?.node?.path === router.asPath ? 'base' : 'light'} text-${color?.text} hover:text-gray-900`}>
                                 {i?.node?.label}
                             </a>
                         </Link>

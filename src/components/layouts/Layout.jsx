@@ -43,19 +43,18 @@ const Layout = ( {children, isPost, data} ) => {
 				{ router && '/contact/' === router.asPath ?
 					<GoogleMap />	:
 					<div className="relative pt-16 pb-32 flex content-center items-center justify-center min-h-screen-75">
-						<div className="absolute top-0 w-full h-full rounded-lg">
+						<div className="absolute top-0 w-full h-full">
 							<Image
 							{ ... isPost ? post?.featuredImage?.node : page?.featuredImage?.node }
 							width="400"
 							height="225"
 							layout="fill"
-							className="rounded-lg"
-							containerClassNames="absolute top-0 w-full h-full bg-center bg-cover rounded-lg"
+							containerClassNames="absolute top-0 w-full h-full bg-center bg-cover"
 							title={seo?.title ?? ''}
 							/>
 							<span
 							id="blackOverlay"
-							className="w-full h-full absolute top-0 opacity-30 bg-black rounded-lg"
+							className="w-full h-full absolute top-0 opacity-30 bg-black"
 							></span>
 						</div>
 						<div className="container relative mx-auto">

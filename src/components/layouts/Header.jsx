@@ -1,6 +1,6 @@
 /* eslint-disable linebreak-style */
 /* eslint-disable eol-last */
-import { Fragment } from 'react';
+import { Fragment, useState, useEffect } from 'react';
 import { Popover, Transition } from '@headlessui/react';
 import Link from 'next/link';
 import { MenuIcon } from '@heroicons/react/outline';
@@ -9,19 +9,43 @@ import NavMobile from '../navs/NavMobile';
 
 import {isEmpty} from 'lodash';
 import PropTypes from 'prop-types';
+import { withRouter } from 'next/router';
 
 
 const Header = ( {header, menu, slug} ) => {
+  const [ color, setColor ] = useState( { 'text': 'white', 'background': 'transparent' } );
   if ( isEmpty( menu ) ) {
     return null;
   }
 
+  const headerColorChange = () => {
+    const windowsScrollTop = window.pageYOffset;
+    if ( 400 < windowsScrollTop ) {
+      setColor( {
+        'text': 'gray-400',
+        'background': 'white'
+      } );
+    } else {
+      setColor( {
+        'text': 'white',
+        'background': 'transparent'
+      } );
+    }
+  };
+
+  useEffect( () => {
+    window.addEventListener( 'scroll', headerColorChange );
+    return function cleanup() {
+      window.removeEventListener( 'scroll', headerColorChange );
+    };
+  }, [] );
+
   return (
-    <Popover className="relative bg-white">
+    <Popover className={`z-50 fixed w-full transition duration-300 ease-in-out transform bg-${color?.background}`}>
       {( { open } ) => (
         <>
           <div className="max-w-7xl mx-auto px-4 sm:px-6">
-            <div className="flex justify-between items-center border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10">
+            <div className="flex justify-between items-center py-4 md:justify-start md:space-x-10">
               <div className="flex justify-start lg:w-0 lg:flex-1">
                 <Link href="/">
                   <a>
@@ -38,13 +62,13 @@ const Header = ( {header, menu, slug} ) => {
               <div className="-mr-2 -my-2 md:hidden">
                 <Popover.Button
                 data-cy="mmenu-btn"
-                className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none "
+                className={`bg-${color?.background} rounded-md p-2 inline-flex items-center justify-center text-${color?.text} hover:text-gray-500 hover:bg-gray-100 focus:outline-none`}
                 >
                   <span className="sr-only">Open menu</span>
                   <MenuIcon className="h-6 w-6" aria-hidden="true" />
                 </Popover.Button>
               </div>
-              <Nav header={header} menu={menu} slug={slug} />
+              <Nav header={header} menu={menu} slug={slug} color={ color } />
             </div>
           </div>
 
