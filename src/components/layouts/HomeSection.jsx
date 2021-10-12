@@ -175,13 +175,13 @@ const HomeSection = () => {
               className="w-full md:w-4/12 ml-auto mr-auto px-4">
                 <img
                   alt="..."
-                  className="max-w-full rounded-lg shadow-lg"
+                  className="max-w-full rounded-lg shadow-lg transform transition-all hover:scale-110"
                   src="https://images.unsplash.com/photo-1555212697-194d092e3b8f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
                 />
               </AnimationOnView>
               <div className="w-full md:w-5/12 ml-auto mr-auto px-4">
                 <div className="md:pr-12">
-                  <div className="text-white p-3 text-center inline-flex items-center justify-center w-16 h-16 my-6 shadow-lg rounded-full bg-indigo-300">
+                  <div className="text-white p-3 text-center inline-flex items-center justify-center w-16 h-16 my-6 shadow-lg rounded-full bg-indigo-300 transform transition-all hover:scale-125">
                     <TrendingUpIcon />
                   </div>
                   <h3 className="text-3xl font-light">A growing company</h3>
@@ -247,7 +247,7 @@ const HomeSection = () => {
         <section className="pt-20 pb-48">
           <div className="lg:container mx-auto px-4">
             <div className="flex flex-wrap justify-center text-center mb-24">
-              <div className="w-full lg:w-6/12 px-4">
+              <div className="w-full lg:w-6/12 px-4 transform transition-all hover:scale-110">
                 <h2 className="text-4xl font-light">Here are our heroes</h2>
                 <p className="text-lg leading-relaxed m-4 text-gray-500">
                   According to the National Oceanic and Atmospheric
