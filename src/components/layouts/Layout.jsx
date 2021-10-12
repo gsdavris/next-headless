@@ -40,39 +40,38 @@ const Layout = ( {children, isPost, data} ) => {
 			</Head>
 			<Header header={header} menu={headerMenus?.edges}/>
 			<main className="w-full flex-col mx-auto min-h-almost-screen">
-				{ router && '/contact/' === router.asPath ?
-					<GoogleMap />	:
-					<div className="relative pt-16 pb-32 flex content-center items-center justify-center min-h-screen-75">
-						<div className="absolute top-0 w-full h-full">
-							<Image
-							{ ... isPost ? post?.featuredImage?.node : page?.featuredImage?.node }
-							width="400"
-							height="225"
-							layout="fill"
-							containerClassNames="absolute top-0 w-full h-full bg-center bg-cover"
-							title={seo?.title ?? ''}
-							/>
-							<span
-							id="blackOverlay"
-							className="w-full h-full absolute top-0 opacity-30 bg-black"
-							></span>
-						</div>
-						<div className="container relative mx-auto">
-							<div className="items-center flex flex-wrap">
-								<div className="w-full lg:w-6/12 px-4 ml-auto mr-auto text-center">
-									<AnimationTitle className="pr-6">
-										<h1 className="text-white font-light text-5xl">
-											{seo?.title}
-										</h1>
-										<p className="mt-4 text-lg font-light text-gray-200">
-											{seo?.metaDesc}
-										</p>
-									</AnimationTitle>
-								</div>
+				<div className="relative pt-16 pb-32 flex content-center items-center justify-center min-h-screen-75">
+					<div className="absolute top-0 w-full h-full">
+						<Image
+						{ ... isPost ? post?.featuredImage?.node : page?.featuredImage?.node }
+						width="400"
+						height="225"
+						layout="fill"
+						containerClassNames="absolute top-0 w-full h-full bg-center bg-cover"
+						title={seo?.title ?? ''}
+						/>
+						<span
+						id="blackOverlay"
+						className="w-full h-full absolute top-0 opacity-30 bg-black"
+						></span>
+					</div>
+					<div className="container relative mx-auto">
+						<div className="items-center flex flex-wrap">
+							<div className="w-full lg:w-6/12 px-4 ml-auto mr-auto text-center">
+								<AnimationTitle className="pr-6">
+									<h1 className="text-white font-light text-5xl">
+										{seo?.title}
+									</h1>
+									<p className="mt-4 text-lg font-light text-gray-200">
+										{seo?.metaDesc}
+									</p>
+								</AnimationTitle>
 							</div>
 						</div>
 					</div>
-				}
+				</div>
+				{ router && '/contact/' === router.asPath ?
+					<GoogleMap />	: '' }
 				{children}
 				{ router &&
 				( '/' === router.asPath || '/contact/' === router.asPath ) &&
